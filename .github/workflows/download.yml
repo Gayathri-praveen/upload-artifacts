@@ -1,0 +1,15 @@
+name: Test
+
+on:
+  workflow_dispatch
+jobs:
+  download:
+    name: download
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: list
+      id: list
+      run: |
+        ARTIFACTS_URL="https://api.github.com/repos/$upload-artifact/actions/runs/github.event.workflow_run.id/artifacts"
+
